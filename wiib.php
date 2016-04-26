@@ -69,7 +69,7 @@ class wiib extends wiib_api {
 		//. '<a href="" style="color:#bbb;background-color:#333;text-decoration:none;"> -<sup>' 
 		//. $image['votes_against'] . '</sup></a>'
 		//. '<br />'
-		. '<a href="' .  $this->url('for') . '?i=' . $image['pageid'] . '">'
+		. '<a href="' .  $this->url('info') . '?i=' . $image['pageid'] . '">'
 		. '<img src="' . $mini_url . '" width="' . $w . '" height="' . $h. '"' 
 			. ' style="border:0px;"'
 			. ' alt="' . htmlspecialchars($this->pretty_title($image['title'])) . '"' 
