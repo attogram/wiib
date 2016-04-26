@@ -1,5 +1,5 @@
 <?php
-// WIIB - Version 0.6.0
+// WIIB
 // INIT
 
 class wiib_init {
@@ -15,7 +15,8 @@ class wiib_init {
 
                 $this->admin = false;
                 $god_array = array(
-                        '127.0.0.1', 
+                        '127.0.0.1',
+						'::1',
                 );
                 if( in_array( $_SERVER['REMOTE_ADDR'], $god_array ) ) {
                         $this->admin = true;

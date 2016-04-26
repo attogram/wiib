@@ -1,5 +1,5 @@
 <?php
-// WIIB 0.6.0
+// WIIB
 // IMPORT 
 
 $class = '../wiib.php'; 

@@ -1,5 +1,5 @@
 <?php
-// WIIB - Version 0.6.0
+// WIIB
 // WEB 
 
 class wiib_web extends wiib_init {
@@ -13,9 +13,10 @@ class wiib_web extends wiib_init {
 		parent::__construct();
 		//$this->debug('wiib_web:__construct()');
 
-		$this->host = 'http://getitdaily.com';  // without trailing slash
+		$this->host = 'http://localhost';  // without trailing slash
 
-		$h = $this->host . '/image/';
+		$h = $this->host . '/wiib/';
+		
 		$this->links = array(
 			'css'     => $h . 'css.css',
 			'home'    => $h . '',

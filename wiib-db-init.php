@@ -1,5 +1,5 @@
 <?php
-// WIIB - Version 0.6.0
+// WIIB
 // DATABASE INIT
 
 $d = dirname(__FILE__);
@@ -10,7 +10,7 @@ class wiib_db_init extends wiib_web {
 	var $db;
 	var $database_name;
 
-        //////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////
 	function __construct() {
                 parent::__construct();
 		//$this->debug('wiib_db_init:__construct()');
@@ -23,7 +23,7 @@ class wiib_db_init extends wiib_web {
 		if( !$this->db ) { $this->fail('error opening database'); exit; }	
 	}
 	
-        //////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////
 	function query_as_array( $sql, $bind=array() ) {
 		$this->debug("wiib_db_init:query_as_array() sql: $sql #bind:" . sizeof($bind));
 		if( !$this->db ) { $this->error('wiib_db_init:query_as_array(): ERROR: no db'); return array(); }
@@ -49,7 +49,7 @@ class wiib_db_init extends wiib_web {
 		return $r;
 	}
 
-        //////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////
 	function query_as_bool( $sql, $bind=array() ) {
 		$this->debug("wiib_db_init:query_as_bool() sql: $sql #bind:" . sizeof($bind));
 		if( !$this->db ) { $this->error('wiib_db_init:query_as_bool(): ERROR: no db'); return FALSE; }
@@ -70,7 +70,7 @@ class wiib_db_init extends wiib_web {
 		return TRUE;
 	}
 
-        //////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////
 	function init_database() {
 		$this->debug('wiib_db_init:init_database()');
 		if( !in_array('sqlite', PDO::getAvailableDrivers() ) ) {
@@ -150,7 +150,6 @@ class wiib_db_init extends wiib_web {
 		$r .= $this->query_as_bool('DROP TABLE user');
 		return $r;
 	}
-
 
 } // END class wiib_db_init
 

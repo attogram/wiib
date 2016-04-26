@@ -1,5 +1,5 @@
 <?php
-// WIIB - Version 0.6.0
+// WIIB
 // API
 
 class wiib_api extends wiib_user {
@@ -7,7 +7,7 @@ class wiib_api extends wiib_user {
 	var $commons_api_url;
 	var $commons_response;
 
-        //////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////
 	function __construct() {
                 parent::__construct();
 		//$this->debug('wiib_api:__construct()');
@@ -185,7 +185,6 @@ class wiib_api extends wiib_user {
                 $r = $this->api_format_to_standard_format($d['query'][$key]);
                 return $r;
 	}
-
 
 	//////////////////////////////////////////////////////////
 	function wiib_json_last_error_msg() {

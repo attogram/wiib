@@ -1,5 +1,5 @@
 <?php
-// WIIB - Version 0.6.0
+// WIIB
 // USER 
 
 class wiib_user extends wiib_db {

@@ -1,5 +1,5 @@
 <?php
-// WIIB Version 0.6.0
+// WIIB
 // Action - Vote For
 
 $class = '../wiib.php'; 

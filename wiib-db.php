@@ -1,6 +1,6 @@
 <?php
-// WIIB - Version 0.6.0
-// DATABASE WIIB
+// WIIB 
+// DATABASE
 
 class wiib_db extends wiib_db_init {
 
@@ -207,7 +207,6 @@ class wiib_db extends wiib_db_init {
 		return $this->portfolio_list = $this->query_as_array($sql);	
 	}
 
-
 	//////////////////////////////////////////////////////////
 	function get_category_list() { 
 		$this->debug("wiib_db:get_categories()");
@@ -252,4 +251,3 @@ class wiib_db extends wiib_db_init {
 	}
 
 } // END class wiib_db 
-

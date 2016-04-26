@@ -1,5 +1,5 @@
 <?php
-// WIIB Version 0.6.0
+// WIIB 
 // Action - Promote Image 
 
 $class = '../wiib.php'; 

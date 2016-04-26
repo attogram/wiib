@@ -1,5 +1,6 @@
 <?php
-// WIIB Version 0.6.0
+// WIIB 
+// index
 
 $class = 'wiib.php'; 
 if(!file_exists($class)||!is_readable($class)){ print 'Site down for maintenance'; exit; } require_once($class);

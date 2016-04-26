@@ -1,6 +1,6 @@
 <?php
-// WIIB - Version 0.6.0
 // WIIB 
+// Version 0.6.1
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -144,6 +144,7 @@ class wiib extends wiib_api {
 		. '&nbsp;</a>' 
 		;
 	}
+
 	//////////////////////////////////////////////////////////
 	function against_button($image, $return='compare') {
 		if( !is_array($image) ) { return '?'; } 
@@ -202,7 +203,7 @@ class wiib extends wiib_api {
 		if( !isset($here[0]) ) { $opts = '<option value="/image/"' 
 			. $this->selected($this->portfolio,'0') . '>Portfolio 0 (0 images)</option>' . $opts; }
 		if( !isset($here[1]) ) { $opts .= '<option value="/image/?port=1"' 
-			. $this->selected($this->portfolio,'1') . ')>Portfolio 1 (0 images)</option>'; }
+			. $this->selected($this->portfolio,'1') . '>Portfolio 1 (0 images)</option>'; }
 		if( !isset($here[2]) ) { $opts .= '<option value="/image/?port=2"'
 			. $this->selected($this->portfolio,'2') . '>Portfolio 2 (0 images)</option>'; }
 		if( !isset($here[3]) ) { $opts .= '<option value="/image/?port=3"'

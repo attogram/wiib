@@ -1,5 +1,5 @@
 <?php
-// WIIB Version 0.6.0
+// WIIB
 // COMPARE
 
 $class = '../wiib.php'; 
