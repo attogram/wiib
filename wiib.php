@@ -170,7 +170,6 @@ class wiib extends wiib_api {
                 ;
 	}
 
-
 	//////////////////////////////////////////////////////////
 	function portfolio_select() {
 
@@ -188,7 +187,7 @@ class wiib extends wiib_api {
 			$votes_against = $x['value']['votes_against'];
 			$selected = ''; if( $this->portfolio == $port ) { $selected = ' selected="selected" '; } 
 			$here[$port] = true;
-			$opts .= '<option value="/image/?port=' . $port . '"' . $selected . '>';
+			$opts .= '<option value="' . $wiib->url('portfolio')  . $port . '"' . $selected . '>';
 			switch( $port ) { 
 				case '-1': $opts_b = "Trash ($count images)"; break;
 				default: 
@@ -198,19 +197,19 @@ class wiib extends wiib_api {
 			} 
 			$opts .= $opts_b . '</option>';
 		} 
-		if( !isset($here[-1]) ) { $opts = '<option value="/image/"' 
+		if( !isset($here[-1]) ) { $opts = '<option value="' . $this->url('portfolio') . '-1"'
 			. $this->selected($this->portfolio,'-1') . '>Trash (0 images)</option>' . $opts; }
-		if( !isset($here[0]) ) { $opts = '<option value="/image/"' 
+		if( !isset($here[0]) ) { $opts = '<option value="' . $this->url('portfolio') . '0"' 
 			. $this->selected($this->portfolio,'0') . '>Portfolio 0 (0 images)</option>' . $opts; }
-		if( !isset($here[1]) ) { $opts .= '<option value="/image/?port=1"' 
+		if( !isset($here[1]) ) { $opts .= '<option value="' . $this->url('portfolio') . '1"' 
 			. $this->selected($this->portfolio,'1') . '>Portfolio 1 (0 images)</option>'; }
-		if( !isset($here[2]) ) { $opts .= '<option value="/image/?port=2"'
+		if( !isset($here[2]) ) { $opts .= '<option value="' . $this->url('portfolio') . '2"' 
 			. $this->selected($this->portfolio,'2') . '>Portfolio 2 (0 images)</option>'; }
-		if( !isset($here[3]) ) { $opts .= '<option value="/image/?port=3"'
+		if( !isset($here[3]) ) { $opts .= '<option value="' . $this->url('portfolio') . '3"'   
 			. $this->selected($this->portfolio,'3') . '>Portfolio 3 (0 images)</option>'; }
 		return '' 
 		. '<select onchange="if (this.value) window.location.href=this.value;">' 
-		. '<option value="/image/">Select a Portfolio</option>'
+		. '<option value="' . $this->url('portfolio') . '">Select a Portfolio</option>'
 		. $opts . '</select>'
 		;
 	} 

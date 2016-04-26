@@ -32,16 +32,16 @@ class wiib_web extends wiib_init {
 			'delete'  => $h . 'a/delete.php',
 			'get'     => $h . 'a/get.php',
 			'admin'   => $h . 'admin',
+			'portfolio' => $h . '?port=',
 		);
 
-                $this->portfolio = 0;
-                if( isset($_GET['port']) && $this->is_number($_GET['port']) ) {
-                        $this->portfolio = $_GET['port'];
-                        $this->debug('wiib_web:__construct(): portfolio:'. $this->portfolio);
-                } else if( isset($_GET['port']) && !$this->is_number($_GET['port']) ) {
+        $this->portfolio = 0;
+		if( isset($_GET['port']) && $this->is_number($_GET['port']) ) {
+			$this->portfolio = $_GET['port'];
+			$this->debug('wiib_web:__construct(): portfolio:'. $this->portfolio);
+		} else if( isset($_GET['port']) && !$this->is_number($_GET['port']) ) {
 			$this->fail('Bad portfolio ID');
 		}
-
 
 	}
 
