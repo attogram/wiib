@@ -60,7 +60,7 @@ class wiib_init {
 
 	//////////////////////////////////////////////////////////
 	function fail($m='') {
-		print '<PRE><a href="/image/">Which image is better .. or worse?</a><BR />';
+		print '<PRE><a href="' .  $this->url('home') . '">Which image is better .. or worse?</a><BR />';
 		print '<BR />SYSTEM FAILURE @ ' . date('r') . ' GMT:<BR /><BR />';
 		if( $m ) { print_r($m); } else { print 'guru meditation error'; } 
 		exit;

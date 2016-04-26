@@ -69,7 +69,7 @@ class wiib extends wiib_api {
 		//. '<a href="" style="color:#bbb;background-color:#333;text-decoration:none;"> -<sup>' 
 		//. $image['votes_against'] . '</sup></a>'
 		//. '<br />'
-		. '<a href="/image/info/?i=' . $image['pageid'] . '">'
+		. '<a href="' .  $this->url('for') . '?i=' . $image['pageid'] . '">'
 		. '<img src="' . $mini_url . '" width="' . $w . '" height="' . $h. '"' 
 			. ' style="border:0px;"'
 			. ' alt="' . htmlspecialchars($this->pretty_title($image['title'])) . '"' 
@@ -106,12 +106,12 @@ class wiib extends wiib_api {
 		. $this->for_button($image, $return) . '&nbsp;' . '&nbsp;' . $this->against_button($image, $return)
 		. '</div>'
 		. '<div style="height:100%;width:100%;" class="pick">'
-		. '<a href="/image/info/?i=' . $image['pageid'] . '">'
+		. '<a href="' .  $this->url('info') . '?i=' . $image['pageid'] . '">'
 		. '<img src="'. $url .'" height="'. $height .'" width="'. $width 
 		. '" alt="" title="'. $title .'">'
 		. '</a>'
 		. ( $this->admin 
-			? '<br /><div class="admin">ADMIN: <a href="/image/a/delete.php?x=' . $image['pageid'] 
+			? '<br /><div class="admin">ADMIN: <a href="' .  $this->url('delete') . '?x=' . $image['pageid'] 
 				. '&r=compare&port=' . $this->portfolio
 				. '">Delete Image ' 
 				. $image['pageid'] . '</a></div>'
@@ -130,11 +130,11 @@ class wiib extends wiib_api {
                 || ( ($image['portfolio'] == 3) && ($image['votes_for'] >= 40) )
                 || ( ($image['portfolio'] >= 4) && ($image['votes_for'] >= 100) )
                 ) {
-			$link = '/image/a/promote.php?p=' . $image['pageid'] . $this->portfolio_urlvar(1);
+			$link =  $this->url('promote') . '?p=' . $image['pageid'] . $this->portfolio_urlvar(1);
 			$link .= '&r=' . $return;
 			$button_text = '^'; $color = 'lightgreen';
 		} else {
-			$link = '/image/a/for.php?b=' . $image['pageid'] . $this->portfolio_urlvar(1);
+			$link =  $this->url('for') . '?b=' . $image['pageid'] . $this->portfolio_urlvar(1);
 			$link .= '&r=' . $return;
 			$button_text = '+'; $color = 'lightgreen';
 		}
@@ -155,11 +155,11 @@ class wiib extends wiib_api {
                   || ( ($image['portfolio'] == 3) && ($image['votes_against'] >= 10) )
                   || ( ($image['portfolio'] >= 4) && ($image['votes_against'] >= 100 ) )
                 ) {
-			$link = '/image/a/delete.php?x='. $image['pageid'] . $this->portfolio_urlvar(1);
+			$link = $this->url('delete') . '?x='. $image['pageid'] . $this->portfolio_urlvar(1);
 			$link .= '&r=' . $return;
 			$button_text = 'x'; $color = 'salmon';
 		} else {
-			$link = '/image/a/against.php?d='. $image['pageid'] . $this->portfolio_urlvar(1);
+			$link =  $this->url('against') . '?d='. $image['pageid'] . $this->portfolio_urlvar(1);
 			$link .= '&r=' . $return;
 			$button_text = '-'; $color = 'salmon';
 		}

@@ -51,7 +51,7 @@ class wiib_api extends wiib_user {
 		$this->error('Files: ' . print_r($file,1));
 		$ir = $this->get_api_image(false, implode('|',$file) );
 
-		$this->error('IMPORT DONE.   <a href="/image/list/?port=' . $this->portfolio 
+		$this->error('IMPORT DONE.   <a href="' .  $this->url('list') . '?port=' . $this->portfolio 
 			. '&s=last_seen&o=DESC&n=50">List new images</a>');
 		exit;
 	}
@@ -139,7 +139,7 @@ class wiib_api extends wiib_user {
 		} 
 
 
-		$this->error('IMPORT DONE.   <a href="/image/list/?port=' . $this->portfolio 
+		$this->error('IMPORT DONE.   <a href="' .  $this->url('list') . '?port=' . $this->portfolio 
 			. '&s=last_seen&o=DESC&n=50">List new images</a>');
 		 exit;
 		return $r;
