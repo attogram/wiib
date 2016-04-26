@@ -187,7 +187,7 @@ class wiib extends wiib_api {
 			$votes_against = $x['value']['votes_against'];
 			$selected = ''; if( $this->portfolio == $port ) { $selected = ' selected="selected" '; } 
 			$here[$port] = true;
-			$opts .= '<option value="' . $wiib->url('portfolio')  . $port . '"' . $selected . '>';
+			$opts .= '<option value="' . $this->url('portfolio')  . $port . '"' . $selected . '>';
 			switch( $port ) { 
 				case '-1': $opts_b = "Trash ($count images)"; break;
 				default: 
