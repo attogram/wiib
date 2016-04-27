@@ -56,11 +56,11 @@ include('../header.php');
 <div style="font-size:24px;">Import images into portfolio <?php print $wiib->portfolio; ?></div>
 
 <br />
-* <a href="../a/get.php?g=r&amp;port=<?php print $wiib->portfolio; ?>&amp;r=compare">add 10 random images</a>
+* <a href="<?php print $wiib->url('get'); ?>?g=r&amp;port=<?php print $wiib->portfolio; ?>&amp;r=compare">add 10 random images</a>
 
 <br /><br />
 * Import by search:
-<form action="/image/a/get.php" method="GET">
+<form action="<?php print $wiib->url('get'); ?>" method="GET">
 <input type="hidden" name="g" value="s" />
 <input type="hidden" name="r" value="list" />
 <input type="hidden" name="port" value="<?php print $wiib->portfolio ?>" />
@@ -79,7 +79,7 @@ include('../header.php');
 
 <br /><br />
 * Import images from Category:
-<form action="/image/a/get.php" method="GET">
+<form action="<?php print $wiib->url('get'); ?>" method="GET">
 <input type="hidden" name="r" value="list" />
 <input type="hidden" name="g" value="cc" />
 <input type="hidden" name="port" value="<?php print $wiib->portfolio ?>" />
@@ -93,7 +93,7 @@ print '<br /><br />* Import from known Category:';
 while($x=each($cats)){ 
 	$cat = $x['value'] ? $x['value'] : 'ERROR';
 	print '<br />' . $cat
-	. ' - <a href="../a/get.php?g=cc&amp;c=' . urlencode($x['value']) . '&amp;r=list&amp;port=' . $wiib->portfolio . '">import images</a>'
+	. ' - <a href="' . $wiib->url('get') . '?g=cc&amp;c=' . urlencode($x['value']) . '&amp;r=list&amp;port=' . $wiib->portfolio . '">import images</a>'
 	. ' - <a target="commons" href="https://commons.wikimedia.org/wiki/' . $x['value'] . '">view on commons</a>'
 	;
 }
